@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -45,7 +46,8 @@
 					<div class="form-group">
 						<label class="col-md-1 control-label">用户名</label>
 						<div class="col-md-11">
-							<input type="text" class="form-control" placeholder="请输入用户名">
+							<input type="text" class="form-control" name="username"
+								value="${username }" placeholder="请输入用户名">
 						</div>
 					</div>
 					<div class="pull-right">
@@ -64,57 +66,21 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr class="active">
-						<th>表格标题</th>
-						<th>表格标题</th>
-						<th>表格标题</th>
+						<th width="15%">编号</th>
+						<th width="20%">用户名</th>
+						<th width="20%">创建时间</th>
+						<th>描述</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
-					<tr>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-						<td>表格单元格</td>
-					</tr>
+					<c:forEach items="${users }" var="user">
+						<tr>
+							<td>${user.id }</td>
+							<td>${user.username }</td>
+							<td>${user.createTime }</td>
+							<td>${user.desc }</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
