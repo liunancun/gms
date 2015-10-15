@@ -73,14 +73,23 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${users }" var="user">
-						<tr>
-							<td>${user.id }</td>
-							<td>${user.username }</td>
-							<td>${user.createTime }</td>
-							<td>${user.desc }</td>
-						</tr>
-					</c:forEach>
+					<c:choose>
+						<c:when test="${not empty users }">
+							<c:forEach items="${users }" var="user">
+								<tr>
+									<td>${user.id }</td>
+									<td>${user.username }</td>
+									<td>${user.createTime }</td>
+									<td>${user.desc }</td>
+								</tr>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<tr>
+								<td colspan="4" align="center">没有数据</td>
+							</tr>
+						</c:otherwise>
+					</c:choose>
 				</tbody>
 			</table>
 		</div>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lnc.gms.user.po.UserPo;
@@ -22,9 +23,11 @@ public class UserController {
 		model.addAttribute("username", username);
 
 		List<UserPo> users = new ArrayList<UserPo>();
-		for (int i = 1; i <= 12; i++) {
-			if (username == null || ("用户-" + i + i).contains(username)) {
-				users.add(new UserPo("编号-" + i, "用户-" + i + i, null, "描述-" + i));
+		UserPo user = null;
+		for (int i = 1; i <= 100; i++) {
+			user = new UserPo("编号-" + i, "用户-" + i + i, null, "描述-" + i);
+			if (StringUtils.isEmpty(username) || user.getUsername().contains(username)) {
+				users.add(user);
 			}
 		}
 

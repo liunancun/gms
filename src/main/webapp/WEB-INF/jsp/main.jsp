@@ -37,7 +37,8 @@ body {
 					<a href="<%=request.getContextPath()%>/data/list.action">数据管理</a>
 				</li>
 			</ul>
-			<form class="navbar-form navbar-right">
+			<form class="navbar-form navbar-right"
+				action="<%=request.getContextPath()%>/logout.action">
 				<button type="submit" class="btn btn-danger btn-sm">登出</button>
 			</form>
 		</div>
