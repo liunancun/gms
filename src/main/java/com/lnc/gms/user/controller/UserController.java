@@ -42,17 +42,30 @@ public class UserController {
 	}
 
 	@RequestMapping("initEdit")
-	public String initEdit() {
+	public String initEdit(Model model, int id) {
+
+		UserPo user = userService.queryById(id);
+
+		model.addAttribute("user", user);
+
 		return "user/edit";
 	}
 
 	@RequestMapping("edit")
-	public String edit() {
+	public String edit(UserPo user) {
+
+		System.out.println(user);
+		
+		userService.update(user);
+
 		return "redirect:list.action";
 	}
 
 	@RequestMapping("delete")
-	public String delete() {
+	public String delete(int id) {
+
+		System.out.println(id);
+
 		return "redirect:list.action";
 	}
 

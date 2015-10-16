@@ -23,9 +23,17 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserPo queryById(String id) {
+	public UserPo queryById(int id) {
 
 		UserPo user = userMapper.queryById(id);
+
+		return user;
+	}
+
+	@Override
+	public UserPo queryByUsername(String username) {
+
+		UserPo user = userMapper.queryByUsername(username);
 
 		return user;
 	}

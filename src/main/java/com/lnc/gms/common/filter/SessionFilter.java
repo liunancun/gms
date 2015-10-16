@@ -17,16 +17,15 @@ import javax.servlet.http.HttpSession;
  */
 public class SessionFilter implements Filter {
 
-	public void doFilter(ServletRequest request, ServletResponse response,
-			FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
 
 		String path = req.getServletPath();
-		if (session.getAttribute("login") == null
-				&& !path.equals("/login.action")) {
+		if (session.getAttribute("user") == null && !path.equals("/login.action")) {
 			resp.sendRedirect(req.getContextPath() + "/login.html");
 			return;
 		}

@@ -90,10 +90,10 @@
 									</td>
 									<td>${user.desc }</td>
 									<td>
-										<a href="initEdit.action">
+										<a href="initEdit.action?id=${user.id }">
 											<button class="btn btn-primary btn-xs" type="button">编辑</button>
 										</a>
-										<a href="delete.action">
+										<a href="delete.action?id=${user.id }">
 											<button class="btn btn-primary btn-xs" type="button">删除</button>
 										</a>
 									</td>

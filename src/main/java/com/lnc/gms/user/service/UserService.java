@@ -8,7 +8,9 @@ public interface UserService {
 
 	List<UserPo> query(UserPo user);
 
-	UserPo queryById(String id);
+	UserPo queryById(int id);
+
+	UserPo queryByUsername(String username);
 
 	void save(UserPo user);
 

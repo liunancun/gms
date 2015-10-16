@@ -7,9 +7,16 @@
 		FROM T_USER ORDER BY ID
 	</select>
 
-	<select id="queryById" parameterType="String" resultType="UserPo">
+	<select id="queryById" parameterType="int" resultType="UserPo">
 		SELECT
-		* FROM T_USER WHERE ID=#{id}
+		*
+		FROM T_USER WHERE ID=#{id}
+	</select>
+
+	<select id="queryByUsername" parameterType="String" resultType="UserPo">
+		SELECT
+		*
+		FROM T_USER WHERE USERNAME=#{username}
 	</select>
 
 	<insert id="insert" parameterType="UserPo">
@@ -36,8 +43,12 @@
 
 	<update id="update" parameterType="UserPo">
 		UPDATE T_USER SET
-		NAME=#{name}, SEX=#{sex},
-		AGE=#{age}, DESC=#{desc} WHERE ID=#{id}
+		DESC=#{desc}
+		<if test="password != null and password != ''">
+			,PASSWORD=#{password}
+		</if>
+		WHERE
+		ID=#{id}
 	</update>
 
 </mapper>

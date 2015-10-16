@@ -42,23 +42,23 @@
 			<div class="panel-body">
 				<form method="post"
 					action="<%=request.getContextPath()%>/user/edit.action">
+					<input type="hidden" name="id" value="${user.id }" />
 					<div class="form-group">
 						<label>用户名</label>
-						<input class="form-control" type="text" readonly="readonly" />
+						<input class="form-control" type="text" value="${user.username }"
+							readonly="readonly" />
 					</div>
 					<div class="form-group">
 						<label>密码</label>
-						<input class="form-control" type="password" name="password"
-							required="required" />
+						<input class="form-control" type="password" name="password" />
 					</div>
 					<div class="form-group">
 						<label>确认密码</label>
-						<input class="form-control" type="password" name="confirm"
-							required="required" />
+						<input class="form-control" type="password" name="confirm" />
 					</div>
 					<div class="form-group">
 						<label>描述</label>
-						<textarea class="form-control" rows="5" name="desc"></textarea>
+						<textarea class="form-control" rows="5" name="desc">${user.desc }</textarea>
 					</div>
 					<div class="pull-right">
 						<button class="btn btn-primary" type="submit">提交</button>

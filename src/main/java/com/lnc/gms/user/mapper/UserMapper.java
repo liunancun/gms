@@ -8,7 +8,9 @@ public interface UserMapper {
 
 	List<UserPo> query(UserPo user);
 
-	UserPo queryById(String id);
+	UserPo queryById(int id);
+
+	UserPo queryByUsername(String username);
 
 	void insert(UserPo user);
 
