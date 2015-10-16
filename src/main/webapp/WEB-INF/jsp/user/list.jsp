@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -47,7 +48,7 @@
 						<label class="col-md-1 control-label">用户名</label>
 						<div class="col-md-11">
 							<input type="text" class="form-control" name="username"
-								value="${username }" placeholder="请输入用户名">
+								value="${param.username }" placeholder="请输入用户名">
 						</div>
 					</div>
 					<div class="pull-right">
@@ -58,18 +59,23 @@
 			</div>
 		</div>
 		<div class="mt10f pb10">
-			<button class="btn btn-primary" type="button">添加</button>
-			<button class="btn btn-primary" type="button">导入</button>
+			<a href="initAdd.action">
+				<button class="btn btn-primary" type="button">添加</button>
+			</a>
+			<a href="initAdd.action">
+				<button class="btn btn-primary" type="button">导入</button>
+			</a>
 		</div>
 		<div class="panel panel-primary">
 			<div class="panel-heading">搜索结果</div>
-			<table class="table table-bordered">
+			<table class="table  table-bordered">
 				<thead>
 					<tr class="active">
 						<th width="15%">编号</th>
 						<th width="20%">用户名</th>
 						<th width="20%">创建时间</th>
 						<th>描述</th>
+						<th width="15%">操作</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -79,8 +85,18 @@
 								<tr>
 									<td>${user.id }</td>
 									<td>${user.username }</td>
-									<td>${user.createTime }</td>
+									<td>
+										<fmt:formatDate value="${user.createTime }" type="both" />
+									</td>
 									<td>${user.desc }</td>
+									<td>
+										<a href="initEdit.action">
+											<button class="btn btn-primary btn-xs" type="button">编辑</button>
+										</a>
+										<a href="delete.action">
+											<button class="btn btn-primary btn-xs" type="button">删除</button>
+										</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</c:when>

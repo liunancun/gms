@@ -69,4 +69,10 @@ public class UserPo {
 		this.desc = desc;
 	}
 
+	@Override
+	public String toString() {
+		return "UserPo [id=" + id + ", username=" + username + ", password=" + password + ", createTime=" + createTime
+				+ ", desc=" + desc + "]";
+	}
+
 }

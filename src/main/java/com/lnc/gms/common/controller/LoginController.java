@@ -1,4 +1,4 @@
-package com.lnc.gms.controller;
+package com.lnc.gms.common.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

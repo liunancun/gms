@@ -1,4 +1,4 @@
-package com.lnc.gms.filter;
+package com.lnc.gms.common.filter;
 
 import java.io.IOException;
 

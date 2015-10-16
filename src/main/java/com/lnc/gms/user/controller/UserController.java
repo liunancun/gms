@@ -1,35 +1,27 @@
 package com.lnc.gms.user.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lnc.gms.user.po.UserPo;
+import com.lnc.gms.user.service.UserService;
 
 @Controller
 @RequestMapping("user")
 public class UserController {
 
+	@Resource
+	private UserService userService;
+
 	@RequestMapping("list")
-	public String list(Model model, HttpServletRequest request) {
+	public String list(Model model, UserPo user) {
 
-		String username = request.getParameter("username");
-		model.addAttribute("username", username);
-
-		List<UserPo> users = new ArrayList<UserPo>();
-		UserPo user = null;
-		for (int i = 1; i <= 100; i++) {
-			user = new UserPo("编号-" + i, "用户-" + i + i, null, "描述-" + i);
-			if (StringUtils.isEmpty(username) || user.getUsername().contains(username)) {
-				users.add(user);
-			}
-		}
+		List<UserPo> users = userService.query(user);
 
 		model.addAttribute("users", users);
 
@@ -42,7 +34,10 @@ public class UserController {
 	}
 
 	@RequestMapping("add")
-	public String add() {
+	public String add(UserPo user) {
+
+		userService.save(user);
+
 		return "redirect:list.action";
 	}
 

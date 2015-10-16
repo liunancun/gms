@@ -1,9 +1,25 @@
-.mt20f {
-	margin-top: -20px;
+.mt8f {
+	margin-top: -8px;
 }
 
 .mt10f {
 	margin-top: -10px;
+}
+
+.mt20f {
+	margin-top: -20px;
+}
+
+.mb8f {
+	margin-bottom: -8px;
+}
+
+.mb9f {
+	margin-bottom: -9px;
+}
+
+.mb10f {
+	margin-bottom: -10px;
 }
 
 .pb10 {
