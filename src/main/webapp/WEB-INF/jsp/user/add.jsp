@@ -42,23 +42,39 @@
 			<div class="panel-body">
 				<form method="post"
 					action="<%=request.getContextPath()%>/user/add.action">
-					<div class="form-group">
-						<label>用户名</label>
-						<input class="form-control" type="text" name="username" required />
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>用户名</label>
+							<input class="form-control" type="text" name="username" required />
+						</div>
+						<div class="form-group col-md-6">
+							<label>昵称</label>
+							<input class="form-control" type="text" name="nickname" required />
+						</div>
 					</div>
-					<div class="form-group">
-						<label>密码</label>
-						<input class="form-control" type="password" name="password"
-							required />
-					</div>
-					<div class="form-group">
-						<label>确认密码</label>
-						<input class="form-control" type="password" name="confirm"
-							required />
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>密码</label>
+							<input class="form-control" type="password" name="password"
+								required />
+						</div>
+						<div class="form-group col-md-6">
+							<label>确认密码</label>
+							<input class="form-control" type="password" name="confirm"
+								required />
+						</div>
 					</div>
 					<div class="form-group">
 						<label>描述</label>
 						<textarea class="form-control" rows="5" name="desc"></textarea>
+					</div>
+					<div class="form-group">
+						<div class="checkbox">
+							<label>
+								<input id="isAdmin" type="checkbox" name="admin" value="true" />
+								管理员
+							</label>
+						</div>
 					</div>
 					<div class="pull-right">
 						<button class="btn btn-primary" type="submit">提交</button>

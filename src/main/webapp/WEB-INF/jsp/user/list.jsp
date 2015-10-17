@@ -42,13 +42,18 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">搜索条件</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="post"
+				<form method="post"
 					action="<%=request.getContextPath()%>/user/list.action">
-					<div class="form-group">
-						<label class="col-md-1 control-label">用户名</label>
-						<div class="col-md-11">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>用户名</label>
 							<input type="text" class="form-control" name="username"
-								value="${param.username }" placeholder="请输入用户名">
+								value="${param.username }" />
+						</div>
+						<div class="form-group col-md-6">
+							<label>昵称</label>
+							<input type="text" class="form-control" name="nickname"
+								value="${param.nickname }" />
 						</div>
 					</div>
 					<div class="pull-right">
@@ -62,18 +67,18 @@
 			<a href="initAdd.action">
 				<button class="btn btn-primary" type="button">添加</button>
 			</a>
-			<a href="initAdd.action">
-				<button class="btn btn-primary" type="button">导入</button>
-			</a>
+			<button class="btn btn-primary" type="button" data-toggle="modal"
+				data-target="#myModal">导入</button>
 		</div>
 		<div class="panel panel-primary">
 			<div class="panel-heading">搜索结果</div>
 			<table class="table  table-bordered">
 				<thead>
 					<tr class="active">
-						<th width="15%">编号</th>
-						<th width="20%">用户名</th>
-						<th width="20%">创建时间</th>
+						<th width="10%">编号</th>
+						<th width="15%">用户名</th>
+						<th width="15%">昵称</th>
+						<th width="15%">创建时间</th>
 						<th>描述</th>
 						<th width="15%">操作</th>
 					</tr>
@@ -85,6 +90,7 @@
 								<tr>
 									<td>${user.id }</td>
 									<td>${user.username }</td>
+									<td>${user.nickname }</td>
 									<td>
 										<fmt:formatDate value="${user.createTime }" type="both" />
 									</td>
@@ -129,6 +135,31 @@
 			</ul>
 		</nav>
 	</div>
+
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>One fine body&hellip;</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+	<!-- /.modal -->
 
 	<script src="../js/jquery-1.11.3.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>

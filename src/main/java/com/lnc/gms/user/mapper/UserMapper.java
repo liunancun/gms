@@ -14,7 +14,7 @@ public interface UserMapper {
 
 	void insert(UserPo user);
 
-	void delete(String id);
+	void delete(int id);
 
 	void update(UserPo user);
 

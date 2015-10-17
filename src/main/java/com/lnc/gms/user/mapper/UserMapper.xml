@@ -23,20 +23,24 @@
 		INSERT INTO T_USER
 		(
 		USERNAME,
+		NICKNAME,
 		PASSWORD,
+		ADMIN,
 		CREATETIME,
 		DESC
 		)
 		VALUES
 		(
 		#{username},
+		#{nickname},
 		#{password},
+		#{admin},
 		now(),
 		#{desc}
 		)
 	</insert>
 
-	<delete id="delete" parameterType="String">
+	<delete id="delete" parameterType="int">
 		DELETE FROM T_USER WHERE
 		ID=#{id}
 	</delete>
@@ -44,6 +48,9 @@
 	<update id="update" parameterType="UserPo">
 		UPDATE T_USER SET
 		DESC=#{desc}
+		<if test="nickname != null and nickname != ''">
+			,NICKNAME=#{nickname}
+		</if>
 		<if test="password != null and password != ''">
 			,PASSWORD=#{password}
 		</if>

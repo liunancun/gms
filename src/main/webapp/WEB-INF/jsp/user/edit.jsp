@@ -43,22 +43,38 @@
 				<form method="post"
 					action="<%=request.getContextPath()%>/user/edit.action">
 					<input type="hidden" name="id" value="${user.id }" />
-					<div class="form-group">
-						<label>用户名</label>
-						<input class="form-control" type="text" value="${user.username }"
-							readonly="readonly" />
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>用户名</label>
+							<p class="form-control-static">${user.username }</p>
+						</div>
+						<div class="form-group col-md-6">
+							<label>昵称</label>
+							<input class="form-control" type="text" name="nickname"
+								value="${user.nickname }" required />
+						</div>
 					</div>
-					<div class="form-group">
-						<label>密码</label>
-						<input class="form-control" type="password" name="password" />
-					</div>
-					<div class="form-group">
-						<label>确认密码</label>
-						<input class="form-control" type="password" name="confirm" />
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>密码</label>
+							<input class="form-control" type="password" name="password" />
+						</div>
+						<div class="form-group col-md-6">
+							<label>确认密码</label>
+							<input class="form-control" type="password" name="confirm" />
+						</div>
 					</div>
 					<div class="form-group">
 						<label>描述</label>
 						<textarea class="form-control" rows="5" name="desc">${user.desc }</textarea>
+					</div>
+					<div class="form-group">
+						<div class="checkbox">
+							<label>
+								<input id="isAdmin" type="checkbox" name="admin" />
+								管理员
+							</label>
+						</div>
 					</div>
 					<div class="pull-right">
 						<button class="btn btn-primary" type="submit">提交</button>

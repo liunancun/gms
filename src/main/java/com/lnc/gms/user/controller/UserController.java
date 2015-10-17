@@ -54,8 +54,6 @@ public class UserController {
 	@RequestMapping("edit")
 	public String edit(UserPo user) {
 
-		System.out.println(user);
-		
 		userService.update(user);
 
 		return "redirect:list.action";
@@ -64,7 +62,7 @@ public class UserController {
 	@RequestMapping("delete")
 	public String delete(int id) {
 
-		System.out.println(id);
+		userService.delete(id);
 
 		return "redirect:list.action";
 	}

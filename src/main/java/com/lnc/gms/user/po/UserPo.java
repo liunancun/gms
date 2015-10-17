@@ -4,36 +4,25 @@ import java.sql.Timestamp;
 
 public class UserPo {
 
-	private String id;
+	private int id;
 
 	private String username;
 
+	private String nickname;
+
 	private String password;
+
+	private boolean admin;
 
 	private Timestamp createTime;
 
 	private String desc;
 
-	public UserPo() {
-	}
-
-	public UserPo(String id, String username) {
-		this.id = id;
-		this.username = username;
-	}
-
-	public UserPo(String id, String username, Timestamp createTime, String desc) {
-		this.id = id;
-		this.username = username;
-		this.createTime = createTime;
-		this.desc = desc;
-	}
-
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -45,12 +34,28 @@ public class UserPo {
 		this.username = username;
 	}
 
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
 	public Timestamp getCreateTime() {
@@ -71,8 +76,8 @@ public class UserPo {
 
 	@Override
 	public String toString() {
-		return "UserPo [id=" + id + ", username=" + username + ", password=" + password + ", createTime=" + createTime
-				+ ", desc=" + desc + "]";
+		return "UserPo [id=" + id + ", username=" + username + ", password=" + password + ", admin=" + admin
+				+ ", createTime=" + createTime + ", desc=" + desc + "]";
 	}
 
 }
