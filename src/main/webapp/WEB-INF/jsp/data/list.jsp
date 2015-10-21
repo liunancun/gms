@@ -40,12 +40,16 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">搜索条件</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="post"
+				<form method="post"
 					action="<%=request.getContextPath()%>/data/list.action">
-					<div class="form-group">
-						<label class="col-md-1 control-label">用户名</label>
-						<div class="col-md-11">
-							<input type="text" class="form-control" placeholder="请输入用户名">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>查询条件</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group col-md-6">
+							<label>查询条件</label>
+							<input type="text" class="form-control" />
 						</div>
 					</div>
 					<div class="pull-right">

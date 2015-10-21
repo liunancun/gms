@@ -15,7 +15,7 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="form-group col-md-6">
-						<label>用户名</label>
+						<label>账号</label>
 						<p id="view_username" class="form-control-static"></p>
 					</div>
 					<div class="form-group col-md-6">

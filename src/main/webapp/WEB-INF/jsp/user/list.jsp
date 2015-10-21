@@ -46,7 +46,7 @@
 					action="<%=request.getContextPath()%>/user/list.action">
 					<div class="row">
 						<div class="form-group col-md-6">
-							<label>用户名</label>
+							<label>账号</label>
 							<input type="text" class="form-control" name="username"
 								value="${param.username }" />
 						</div>
@@ -72,7 +72,7 @@
 				<thead>
 					<tr class="active">
 						<th width="10%">编号</th>
-						<th width="15%">用户名</th>
+						<th width="15%">账号</th>
 						<th width="15%">昵称</th>
 						<th width="15%">创建时间</th>
 						<th>描述</th>
