@@ -28,7 +28,3 @@ function edit(id, username, nickname, desc, admin) {
 	$('#edit_admin').attr("checked", admin);
 	$('#edit').modal();
 }
-
-function del(id) {
-
-}
