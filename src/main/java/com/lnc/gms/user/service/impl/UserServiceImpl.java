@@ -19,6 +19,12 @@ public class UserServiceImpl implements UserService {
 
 		List<UserPo> users = userMapper.query(user);
 
+		for (UserPo po : users) {
+			String desc = po.getDesc();
+			desc = desc.replaceAll("\n", "<br>");
+			po.setDesc(desc);
+		}
+
 		return users;
 	}
 
@@ -26,6 +32,10 @@ public class UserServiceImpl implements UserService {
 	public UserPo queryById(int id) {
 
 		UserPo user = userMapper.queryById(id);
+
+		String desc = user.getDesc();
+		desc = desc.replaceAll("\n", "<br>");
+		user.setDesc(desc);
 
 		return user;
 	}
