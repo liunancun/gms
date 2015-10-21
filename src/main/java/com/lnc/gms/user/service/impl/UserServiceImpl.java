@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
 		for (UserPo po : users) {
 			String desc = po.getDesc();
-			desc = desc.replaceAll("\n", "<br>");
+			desc = desc.replaceAll("\r\n", "<br>");
 			po.setDesc(desc);
 		}
 

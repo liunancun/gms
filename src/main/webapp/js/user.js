@@ -1,3 +1,13 @@
+function add() {
+	$('#add_username').val('');
+	$('#add_nickname').val('');
+	$('#add_password').val('');
+	$('#add_confirm').val('');
+	$('#add_desc').val('');
+	$('#add_admin').attr("checked", false);
+	$('#add').modal();
+}
+
 function view(username, nickname, desc, admin) {
 	$('#view_username').html(username);
 	$('#view_nickname').html(nickname);
@@ -17,4 +27,8 @@ function edit(id, username, nickname, desc, admin) {
 	$('#edit_desc').val(desc);
 	$('#edit_admin').attr("checked", admin);
 	$('#edit').modal();
+}
+
+function del(id) {
+
 }
