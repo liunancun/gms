@@ -21,6 +21,9 @@ public class UserController {
 	@RequestMapping("list")
 	public String list(Model model, UserPo user) {
 
+		// 设置当前菜单ID
+		model.addAttribute("menuId", "user");
+
 		List<UserPo> users = userService.query(user);
 
 		model.addAttribute("users", users);

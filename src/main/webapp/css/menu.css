@@ -1,4 +1,4 @@
-.left {
+.menu {
 	position: fixed;
 	top: 51px;
 	bottom: 0;
@@ -9,19 +9,19 @@
 	border-right: 1px solid #eee;
 }
 
-.nav-left {
+.nav-menu {
 	margin-right: -21px;
 	margin-left: -20px;
 }
 
-.nav-left > li > a {
+.nav-menu > li > a {
   padding-right: 20px;
   padding-left: 20px;
 }
 
-.nav-left > .active > a,
-.nav-left > .active > a:hover,
-.nav-left > .active > a:focus {
+.nav-menu > .active > a,
+.nav-menu > .active > a:hover,
+.nav-menu > .active > a:focus {
   color: #fff;
   background-color: #428bca;
 }

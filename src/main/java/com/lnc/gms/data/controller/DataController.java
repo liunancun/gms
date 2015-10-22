@@ -1,6 +1,7 @@
 package com.lnc.gms.data.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -8,7 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DataController {
 
 	@RequestMapping("list")
-	public String list() {
+	public String list(Model model) {
+
+		// 设置当前菜单ID
+		model.addAttribute("menuId", "data");
+
 		return "data/list";
 	}
 

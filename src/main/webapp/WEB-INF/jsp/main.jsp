@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -10,40 +12,17 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
-<link href="css/left.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand"
-					href="<%=request.getContextPath()%>/main.action">用户管理系统</a>
-			</div>
-			<form class="navbar-form navbar-right"
-				action="<%=request.getContextPath()%>/logout.action">
-				<button type="submit" class="btn btn-danger btn-sm">登出</button>
-			</form>
-		</div>
-	</nav>
+	<%-- 引入页头文件 --%>
+	<%@ include file="brand.jsp"%>
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-2 left">
-				<ul class="nav nav-left">
-					<li class="active">
-						<a href="<%=request.getContextPath()%>/main.action">主页</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/data/list.action">数据管理</a>
-					</li>
-					<li>
-						<a href="<%=request.getContextPath()%>/user/list.action">用户管理</a>
-					</li>
-					<li>
-						<a href="#">关于</a>
-					</li>
-				</ul>
-			</div>
+			<%-- 引入菜单文件 --%>
+			<%@ include file="menu.jsp"%>
+
 			<div class="col-md-10 col-md-offset-2">
 				<div class="panel panel-primary">
 					<div class="panel-heading">搜索条件</div>
@@ -93,116 +72,8 @@
 								<td>2015-10-22 22:12</td>
 								<td>Admin</td>
 								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-								</td>
-							</tr>
-							<tr>
-								<td>001</td>
-								<td>admin</td>
-								<td>Admin</td>
-								<td>2015-10-22 22:12</td>
-								<td>Admin</td>
-								<td>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
+									<button class="btn btn-primary btn-xs" type="button">查看</button>
+									<button class="btn btn-primary btn-xs" type="button">编辑</button>
 									<button class="btn btn-primary btn-xs" type="button">删除</button>
 								</td>
 							</tr>
