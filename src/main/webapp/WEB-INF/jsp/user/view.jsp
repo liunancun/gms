@@ -16,16 +16,18 @@
 				<div class="row">
 					<div class="form-group col-md-6">
 						<label>账号</label>
-						<p id="view_username" class="form-control-static"></p>
+						<input class="form-control" type="text" id="view_username"
+							readonly />
 					</div>
 					<div class="form-group col-md-6">
 						<label>昵称</label>
-						<p id="view_nickname" class="form-control-static"></p>
+						<input class="form-control" type="text" id="view_nickname"
+							readonly />
 					</div>
 				</div>
 				<div class="form-group">
 					<label>描述</label>
-					<p id="view_desc" class="form-control-static"></p>
+					<textarea class="form-control" rows="5" id="view_desc" readonly></textarea>
 				</div>
 			</div>
 			<div class="modal-footer">

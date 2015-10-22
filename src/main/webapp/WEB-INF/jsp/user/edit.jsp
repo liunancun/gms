@@ -17,7 +17,8 @@
 				<div class="row">
 					<div class="form-group col-md-6">
 						<label>账号</label>
-						<p class="form-control-static" id="edit_username"></p>
+						<input class="form-control" type="text" id="edit_username"
+							readonly />
 					</div>
 					<div class="form-group col-md-6">
 						<label>昵称</label>

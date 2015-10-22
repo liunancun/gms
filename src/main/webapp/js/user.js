@@ -9,9 +9,9 @@ function add() {
 }
 
 function view(username, nickname, desc, admin) {
-	$('#view_username').html(username);
-	$('#view_nickname').html(nickname);
-	$('#view_desc').html(desc);
+	$('#view_username').val(username);
+	$('#view_nickname').val(nickname);
+	$('#view_desc').val(desc);
 	if (admin) {
 		$('#view_admin').html('管理员');
 	} else {
@@ -22,7 +22,7 @@ function view(username, nickname, desc, admin) {
 
 function edit(id, username, nickname, desc, admin) {
 	$('#edit_id').val(id);
-	$('#edit_username').html(username);
+	$('#edit_username').val(username);
 	$('#edit_nickname').val(nickname);
 	$('#edit_desc').val(desc);
 	$('#edit_admin').attr("checked", admin);
