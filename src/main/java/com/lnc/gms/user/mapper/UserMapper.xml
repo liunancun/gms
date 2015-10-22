@@ -23,7 +23,6 @@
 		INSERT INTO T_USER
 		(
 		USERNAME,
-		NICKNAME,
 		PASSWORD,
 		ADMIN,
 		CREATETIME,
@@ -32,7 +31,6 @@
 		VALUES
 		(
 		#{username},
-		#{nickname},
 		#{password},
 		#{admin},
 		now(),
@@ -47,10 +45,7 @@
 
 	<update id="update" parameterType="UserPo">
 		UPDATE T_USER SET
-		DESC=#{desc}
-		<if test="nickname != null and nickname != ''">
-			,NICKNAME=#{nickname}
-		</if>
+		DESC=#{desc} ,ADMIN=#{admin}
 		<if test="password != null and password != ''">
 			,PASSWORD=#{password}
 		</if>

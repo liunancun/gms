@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>用户管理</title>
 <link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap-switch.min.css" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/main.css" rel="stylesheet">
 <link href="../css/menu.css" rel="stylesheet">
@@ -22,7 +23,7 @@
 		<div class="row">
 			<%-- 引入菜单文件 --%>
 			<%@ include file="../menu.jsp"%>
-			
+
 			<div class="col-md-10 col-md-offset-2">
 				<div class="panel panel-primary">
 					<div class="panel-heading">搜索条件</div>
@@ -36,9 +37,10 @@
 										value="${param.username }" />
 								</div>
 								<div class="form-group col-md-6">
-									<label>昵称</label>
-									<input type="text" class="form-control" name="nickname"
-										value="${param.nickname }" />
+									<label>管理员</label>
+									<div class="switch">
+										<input type="checkbox" name="admin" value="true" />
+									</div>
 								</div>
 							</div>
 							<div class="pull-right">
@@ -58,7 +60,6 @@
 							<tr class="active">
 								<th width="10%">编号</th>
 								<th width="15%">账号</th>
-								<th width="15%">昵称</th>
 								<th width="15%">创建时间</th>
 								<th>描述</th>
 								<th width="15%">操作</th>
@@ -71,16 +72,15 @@
 										<tr>
 											<td>${user.id }</td>
 											<td>${user.username }</td>
-											<td>${user.nickname }</td>
 											<td>
 												<fmt:formatDate value="${user.createTime }" type="both" />
 											</td>
 											<td>${user.desc }</td>
 											<td>
 												<button class="btn btn-primary btn-xs" type="button"
-													onclick="view('${user.username }','${user.nickname }','${user.desc }', ${user.admin })">查看</button>
+													onclick="view('${user.username }','${user.desc }', ${user.admin })">查看</button>
 												<button class="btn btn-primary btn-xs" type="button"
-													onclick="edit('${user.id }','${user.username }','${user.nickname }','${user.desc }', ${user.admin })">编辑</button>
+													onclick="edit('${user.id }','${user.username }','${user.desc }', ${user.admin })">编辑</button>
 												<a href="delete.action?id=${user.id }">
 													<button class="btn btn-primary btn-xs" type="button">删除</button>
 												</a>
@@ -126,6 +126,7 @@
 
 	<script src="../js/jquery-1.11.3.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-switch.js"></script>
 	<script src="../js/user.js"></script>
 </body>
 </html>

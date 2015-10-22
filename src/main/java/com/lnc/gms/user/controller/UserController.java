@@ -39,6 +39,8 @@ public class UserController {
 	@RequestMapping("add")
 	public String add(UserPo user) {
 
+		System.out.println(user);
+
 		userService.save(user);
 
 		return "redirect:list.action";

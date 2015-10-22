@@ -20,9 +20,10 @@
 							readonly />
 					</div>
 					<div class="form-group col-md-6">
-						<label>昵称</label>
-						<input class="form-control" type="text" id="view_nickname"
-							readonly />
+						<label>管理员</label>
+						<div class="switch">
+							<input type="checkbox" id="view_admin" />
+						</div>
 					</div>
 				</div>
 				<div class="form-group">
@@ -31,14 +32,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<div class="row">
-					<div class="col-md-8">
-						<label id="view_admin" class="pull-left"></label>
-					</div>
-					<div class="col-md-4">
-						<button class="btn btn-default" type="button" data-dismiss="modal">取消</button>
-					</div>
-				</div>
+				<button class="btn btn-default" type="button" data-dismiss="modal">取消</button>
 			</div>
 		</form>
 	</div>

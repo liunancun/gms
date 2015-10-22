@@ -1,30 +1,27 @@
 function add() {
 	$('#add_username').val('');
-	$('#add_nickname').val('');
 	$('#add_password').val('');
 	$('#add_confirm').val('');
 	$('#add_desc').val('');
-	$('#add_admin').attr("checked", false);
+	$('#add_admin').bootstrapSwitch('state', false);
 	$('#add').modal();
 }
 
-function view(username, nickname, desc, admin) {
+function view(username, desc, admin) {
 	$('#view_username').val(username);
-	$('#view_nickname').val(nickname);
 	$('#view_desc').val(desc);
-	if (admin) {
-		$('#view_admin').html('管理员');
-	} else {
-		$('#view_admin').html('');
-	}
+	$('#view_admin').bootstrapSwitch('state', admin);
 	$('#view').modal();
 }
 
-function edit(id, username, nickname, desc, admin) {
+function edit(id, username, desc, admin) {
 	$('#edit_id').val(id);
 	$('#edit_username').val(username);
-	$('#edit_nickname').val(nickname);
 	$('#edit_desc').val(desc);
-	$('#edit_admin').attr("checked", admin);
+	$('#edit_admin').bootstrapSwitch('state', admin);
 	$('#edit').modal();
 }
+
+$(function(argument) {
+	$('[type="checkbox"]').bootstrapSwitch();
+});
