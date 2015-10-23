@@ -7,68 +7,36 @@
 <title>管理系统</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-switch.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">管理系统</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li>
-					<a href="#">主页</a>
-				</li>
-				<li class="active">
-					<a href="#">用户管理</a>
-				</li>
-				<li>
-					<a href="#">数据管理</a>
-				</li>
-			</ul>
-			<form class="navbar-form navbar-right" action="#">
-				<button type="submit" class="btn btn-danger btn-sm">登出</button>
-			</form>
-		</div>
-	</nav>
-
 	<div class="container">
-		<div class="row">
-			<div class="col-md-2">
-				<div class="panel panel-primary">
-					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation">
-							<a href="#">主页</a>
-						</li>
-						<li role="presentation" class="active">
-							<a href="#">数据管理</a>
-						</li>
-						<li role="presentation">
-							<a href="#">用户管理</a>
-						</li>
-						<li role="presentation">
-							<a href="#">关于我们</a>
-						</li>
-					</ul>
+		<form action="" class="form-horizontal" role="form">
+			<fieldset>
+				<legend>Test</legend>
+				<div class="form-group">
+					<div class="input-group date form_date col-md-5" data-date=""
+						data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+						data-link-format="yyyy-mm-dd">
+						<input class="form-control" size="16" type="text" value=""
+							readonly>
+						<span class="input-group-addon"><span
+							class="glyphicon glyphicon-remove"></span></span> <span
+							class="input-group-addon"><span
+							class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+					<input type="hidden" id="dtp_input2" value="" />
+					<br />
 				</div>
-			</div>
-			<div class="col-md-10">
-				<div class="switch">
-					<input type="checkbox" checked data-on-label="SI"
-						data-off-label="NO" />
-				</div>
-			</div>
-		</div>
+			</fieldset>
+		</form>
 	</div>
+	<input class="date" type="text" data-date-format="dd-mm-yyyy">
 
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-switch.min.js"></script>
-	<script>
-		$(function(argument) {
-			$('[type="checkbox"]').bootstrapSwitch();
-		})
-	</script>
+	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
 </body>
 </html>

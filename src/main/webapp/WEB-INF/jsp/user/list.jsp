@@ -9,11 +9,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>用户管理</title>
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/bootstrap-switch.min.css" rel="stylesheet">
-<link href="../css/style.css" rel="stylesheet">
-<link href="../css/main.css" rel="stylesheet">
-<link href="../css/menu.css" rel="stylesheet">
+<%-- 引入样式文件 --%>
+<%@ include file="../css.jsp"%>
 </head>
 <body>
 	<%-- 引入页头文件 --%>
@@ -25,6 +22,7 @@
 			<%@ include file="../menu.jsp"%>
 
 			<div class="col-md-10 col-md-offset-2">
+				<!-- 查询条件开始 -->
 				<div class="panel panel-primary">
 					<div class="panel-heading">搜索条件</div>
 					<div class="panel-body">
@@ -33,13 +31,39 @@
 							<div class="row">
 								<div class="form-group col-md-6">
 									<label>用户名</label>
-									<input type="text" class="form-control" name="usernamelike"
+									<input class="form-control" type="text" name="usernamelike"
 										value="${param.usernamelike }" />
 								</div>
 								<div class="form-group col-md-6">
 									<label>创建时间</label>
-									<input type="text" class="form-control" name="createTime"
-										value="${param.createTime }" />
+									<div class="row">
+										<div class="col-md-6">
+											<div class="input-group date start-time">
+												<fmt:parseDate value="${param.startTime }" var="startTime"
+													pattern="yyyy-MM-dd HH:mm:ss" />
+												<input id="start_time" name="startTime" type="hidden"
+													value="<fmt:formatDate value='${startTime }' pattern='yyyy-MM-dd HH:mm:ss' />" />
+												<input class="form-control" type="text"
+													value="<fmt:formatDate value='${startTime }' pattern='yyyy-MM-dd' />" />
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-th"></i>
+												</span>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="input-group date end-time">
+												<fmt:parseDate value="${param.endTime }" var="endTime"
+													pattern="yyyy-MM-dd HH:mm:ss" />
+												<input id="end_time" name="endTime" type="hidden"
+													value="<fmt:formatDate value='${endTime }' pattern='yyyy-MM-dd HH:mm:ss' />" />
+												<input class="form-control " type="text"
+													value="<fmt:formatDate value='${endTime }' pattern='yyyy-MM-dd' />" />
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-th"></i>
+												</span>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="pull-right">
@@ -50,9 +74,15 @@
 						</form>
 					</div>
 				</div>
+				<!-- 查询条件结束 -->
+
+				<!-- 功能按钮开始 -->
 				<div class="mt10f pb10">
 					<button class="btn btn-primary" type="button" onclick="add()">添加</button>
 				</div>
+				<!-- 功能按钮结束 -->
+
+				<!-- 查询结果开始 -->
 				<div class="panel panel-primary">
 					<div class="panel-heading">结果列表</div>
 					<table class="table table-bordered table-hover table-condensed">
@@ -60,7 +90,7 @@
 							<tr class="active">
 								<th width="10%">编号</th>
 								<th width="15%">用户名</th>
-								<th width="10%">管理员</th>
+								<th width="10%">是否管理员</th>
 								<th width="20%">创建时间</th>
 								<th>描述</th>
 								<th width="15%">操作</th>
@@ -71,13 +101,15 @@
 								<c:when test="${not empty users }">
 									<c:forEach items="${users }" var="user">
 										<tr>
-											<td>${user.id }</td>
-											<td>${user.username }</td>
-											<td>${user.admin ? '是' : '否' }</td>
-											<td>
-												<fmt:formatDate value="${user.createTime }" type="both" />
+											<td title="${user.id }">${user.id }</td>
+											<td title="${user.username }">${user.username }</td>
+											<td title="${user.admin ? '是' : '否' }">${user.admin ? '是' : '否' }</td>
+											<td
+												title="<fmt:formatDate value='${user.createTime }' pattern='yyyy-MM-dd HH:mm:ss' />">
+												<fmt:formatDate value="${user.createTime }"
+													pattern="yyyy-MM-dd HH:mm:ss" />
 											</td>
-											<td>${user.desc }</td>
+											<td title="${user.desc }">${user.desc }</td>
 											<td>
 												<img class="png18" alt="edit" src="../img/view.png"
 													onclick="view('${user.username }','${user.desc }', ${user.admin })" />
@@ -99,6 +131,9 @@
 						</tbody>
 					</table>
 				</div>
+				<!-- 查询结果结束 -->
+
+				<!-- 分页开始 -->
 				<nav class="mt20f pull-right">
 					<ul class="pagination">
 						<li>
@@ -118,18 +153,19 @@
 						</li>
 					</ul>
 				</nav>
+				<!-- 分页结束 -->
 			</div>
 		</div>
 	</div>
 
+	<!-- 引入添加页面文件 -->
 	<%@ include file="add.jsp"%>
+	<!-- 引入编辑页面文件 -->
 	<%@ include file="edit.jsp"%>
+	<!-- 引入详情页面文件 -->
 	<%@ include file="view.jsp"%>
 
-	<script src="../js/jquery-1.11.3.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/bootstrap-switch.js"></script>
-	<script src="../js/main.js"></script>
-	<script src="../js/user.js"></script>
+	<!-- 引入脚本文件 -->
+	<%@ include file="../js.jsp"%>
 </body>
 </html>

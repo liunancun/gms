@@ -7,10 +7,13 @@
 		FROM T_USER
 		<where>
 			<if test="usernamelike !=null and usernamelike !=''">
-				USERNAME LIKE CONCAT('%','${usernamelike}','%' )
+				AND USERNAME LIKE CONCAT('%','${usernamelike}','%' )
 			</if>
-			<if test="createTime !=null">
-				CREATETIME=#{createTime}
+			<if test="startTime !=null">
+				AND CREATETIME &gt;= #{startTime}
+			</if>
+			<if test="endTime !=null">
+				AND CREATETIME &lt;= #{endTime}
 			</if>
 		</where>
 		ORDER BY ID
