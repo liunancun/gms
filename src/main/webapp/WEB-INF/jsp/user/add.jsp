@@ -15,7 +15,7 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="form-group col-md-6">
-						<label>账号</label>
+						<label>用户名</label>
 						<input class="form-control" type="text" id="add_username"
 							name="username" required />
 					</div>

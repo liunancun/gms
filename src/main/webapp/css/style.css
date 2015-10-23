@@ -30,6 +30,26 @@
 	padding-bottom: 20px;
 }
 
+.ml5 {
+	margin-left: 5px;
+}
+
 .h600 {
 	height: 600px;
+}
+
+.wh18 {
+	width: 18px;
+	height: 18px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.png18 {
+	width: 18px;
+	height: 18px;
+	margin-left: 5px;
+	cursor: pointer;
 }

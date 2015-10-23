@@ -16,6 +16,8 @@ public class UserPo {
 
 	private String desc;
 
+	private String usernamelike;
+
 	public int getId() {
 		return id;
 	}
@@ -62,6 +64,14 @@ public class UserPo {
 
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}
+
+	public String getUsernamelike() {
+		return usernamelike;
+	}
+
+	public void setUsernamelike(String usernamelike) {
+		this.usernamelike = usernamelike;
 	}
 
 	@Override

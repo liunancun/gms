@@ -72,9 +72,33 @@
 								<td>2015-10-22 22:12</td>
 								<td>Admin</td>
 								<td>
-									<button class="btn btn-primary btn-xs" type="button">查看</button>
-									<button class="btn btn-primary btn-xs" type="button">编辑</button>
-									<button class="btn btn-primary btn-xs" type="button">删除</button>
+									<img class="png18" alt="edit" src="img/view.png" />
+									<img class="png18" alt="edit" src="img/edit.png" />
+									<img class="png18" alt="edit" src="img/delete.png" />
+								</td>
+							</tr>
+							<tr>
+								<td>001</td>
+								<td>admin</td>
+								<td>Admin</td>
+								<td>2015-10-22 22:12</td>
+								<td>Admin</td>
+								<td>
+									<img class="png18" alt="edit" src="img/view.png" />
+									<img class="png18" alt="edit" src="img/edit.png" />
+									<img class="png18" alt="edit" src="img/delete.png" />
+								</td>
+							</tr>
+							<tr>
+								<td>001</td>
+								<td>admin</td>
+								<td>Admin</td>
+								<td>2015-10-22 22:12</td>
+								<td>Admin</td>
+								<td>
+									<img class="png18" alt="edit" src="img/view.png" />
+									<img class="png18" alt="edit" src="img/edit.png" />
+									<img class="png18" alt="edit" src="img/delete.png" />
 								</td>
 							</tr>
 						</tbody>

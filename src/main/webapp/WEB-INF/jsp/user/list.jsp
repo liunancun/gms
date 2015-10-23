@@ -28,24 +28,24 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">搜索条件</div>
 					<div class="panel-body">
-						<form method="post"
+						<form id="search" method="post"
 							action="<%=request.getContextPath()%>/user/list.action">
 							<div class="row">
 								<div class="form-group col-md-6">
-									<label>账号</label>
-									<input type="text" class="form-control" name="username"
-										value="${param.username }" />
+									<label>用户名</label>
+									<input type="text" class="form-control" name="usernamelike"
+										value="${param.usernamelike }" />
 								</div>
 								<div class="form-group col-md-6">
-									<label>管理员</label>
-									<div class="switch">
-										<input type="checkbox" name="admin" value="true" />
-									</div>
+									<label>创建时间</label>
+									<input type="text" class="form-control" name="createTime"
+										value="${param.createTime }" />
 								</div>
 							</div>
 							<div class="pull-right">
 								<button class="btn btn-primary" type="submit">搜索</button>
-								<button class="btn btn-primary" type="reset">重置</button>
+								<button class="btn btn-primary" type="button"
+									onclick="clean(this)">重置</button>
 							</div>
 						</form>
 					</div>
@@ -54,13 +54,14 @@
 					<button class="btn btn-primary" type="button" onclick="add()">添加</button>
 				</div>
 				<div class="panel panel-primary">
-					<div class="panel-heading">搜索结果</div>
-					<table class="table  table-bordered">
+					<div class="panel-heading">结果列表</div>
+					<table class="table table-bordered table-hover table-condensed">
 						<thead>
 							<tr class="active">
 								<th width="10%">编号</th>
-								<th width="15%">账号</th>
-								<th width="15%">创建时间</th>
+								<th width="15%">用户名</th>
+								<th width="10%">管理员</th>
+								<th width="20%">创建时间</th>
 								<th>描述</th>
 								<th width="15%">操作</th>
 							</tr>
@@ -72,17 +73,18 @@
 										<tr>
 											<td>${user.id }</td>
 											<td>${user.username }</td>
+											<td>${user.admin ? '是' : '否' }</td>
 											<td>
 												<fmt:formatDate value="${user.createTime }" type="both" />
 											</td>
 											<td>${user.desc }</td>
 											<td>
-												<button class="btn btn-primary btn-xs" type="button"
-													onclick="view('${user.username }','${user.desc }', ${user.admin })">查看</button>
-												<button class="btn btn-primary btn-xs" type="button"
-													onclick="edit('${user.id }','${user.username }','${user.desc }', ${user.admin })">编辑</button>
+												<img class="png18" alt="edit" src="../img/view.png"
+													onclick="view('${user.username }','${user.desc }', ${user.admin })" />
+												<img class="png18" alt="edit" src="../img/edit.png"
+													onclick="edit('${user.id }','${user.username }','${user.desc }', ${user.admin })" />
 												<a href="delete.action?id=${user.id }">
-													<button class="btn btn-primary btn-xs" type="button">删除</button>
+													<img class="png18" alt="edit" src="../img/delete.png" />
 												</a>
 											</td>
 										</tr>
@@ -90,7 +92,7 @@
 								</c:when>
 								<c:otherwise>
 									<tr>
-										<td colspan="4" align="center">没有数据</td>
+										<td colspan="6" align="center">没有数据</td>
 									</tr>
 								</c:otherwise>
 							</c:choose>
@@ -127,6 +129,7 @@
 	<script src="../js/jquery-1.11.3.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/bootstrap-switch.js"></script>
+	<script src="../js/main.js"></script>
 	<script src="../js/user.js"></script>
 </body>
 </html>

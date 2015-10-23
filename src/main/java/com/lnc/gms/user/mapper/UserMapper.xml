@@ -4,7 +4,16 @@
 
 	<select id="query" parameterType="UserPo" resultType="UserPo">
 		SELECT *
-		FROM T_USER ORDER BY ID
+		FROM T_USER
+		<where>
+			<if test="usernamelike !=null and usernamelike !=''">
+				USERNAME LIKE CONCAT('%','${usernamelike}','%' )
+			</if>
+			<if test="createTime !=null">
+				CREATETIME=#{createTime}
+			</if>
+		</where>
+		ORDER BY ID
 	</select>
 
 	<select id="queryById" parameterType="int" resultType="UserPo">
