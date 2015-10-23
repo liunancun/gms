@@ -32,7 +32,7 @@
 								<div class="form-group col-md-6">
 									<label>用户名</label>
 									<input class="form-control" type="text" name="usernamelike"
-										value="${param.usernamelike }" />
+										placeholder="用户名" value="${param.usernamelike }" />
 								</div>
 								<div class="form-group col-md-6">
 									<label>创建时间</label>
@@ -43,7 +43,7 @@
 													pattern="yyyy-MM-dd HH:mm:ss" />
 												<input id="start_time" name="startTime" type="hidden"
 													value="<fmt:formatDate value='${startTime }' pattern='yyyy-MM-dd HH:mm:ss' />" />
-												<input class="form-control" type="text"
+												<input class="form-control" type="text" placeholder="开始时间"
 													value="<fmt:formatDate value='${startTime }' pattern='yyyy-MM-dd' />" />
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-th"></i>
@@ -56,7 +56,7 @@
 													pattern="yyyy-MM-dd HH:mm:ss" />
 												<input id="end_time" name="endTime" type="hidden"
 													value="<fmt:formatDate value='${endTime }' pattern='yyyy-MM-dd HH:mm:ss' />" />
-												<input class="form-control " type="text"
+												<input class="form-control " type="text" placeholder="结束时间"
 													value="<fmt:formatDate value='${endTime }' pattern='yyyy-MM-dd' />" />
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-th"></i>
